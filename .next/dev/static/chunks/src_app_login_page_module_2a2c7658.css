@@ -1,0 +1,134 @@
+/* [project]/src/app/login/page.module.css [app-client] (css) */
+.page-module__aydn6q__page {
+  color: #f8fafc;
+  background: radial-gradient(circle at top, #0f172a 0%, #0b1220 45%, #090d16 100%);
+  place-items: center;
+  min-height: 100vh;
+  padding: 48px 24px;
+  display: grid;
+}
+
+.page-module__aydn6q__card {
+  background: #0f172acc;
+  border: 1px solid #94a3b833;
+  border-radius: 24px;
+  flex-direction: column;
+  gap: 20px;
+  width: min(520px, 100%);
+  padding: 32px;
+  display: flex;
+  box-shadow: 0 20px 60px #0f172a66;
+}
+
+.page-module__aydn6q__header h1 {
+  margin: 8px 0;
+  font-size: 2rem;
+}
+
+.page-module__aydn6q__kicker {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #e2e8f0b3;
+  font-size: .7rem;
+}
+
+.page-module__aydn6q__subtitle {
+  color: #e2e8f0b3;
+  line-height: 1.6;
+}
+
+.page-module__aydn6q__metaRow {
+  flex-wrap: wrap;
+  gap: 24px;
+  font-size: .9rem;
+  display: flex;
+}
+
+.page-module__aydn6q__metaLabel {
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: #94a3b8b3;
+  font-size: .65rem;
+}
+
+.page-module__aydn6q__metaValue {
+  font-weight: 600;
+}
+
+.page-module__aydn6q__form {
+  flex-direction: column;
+  gap: 14px;
+  display: flex;
+}
+
+.page-module__aydn6q__label {
+  flex-direction: column;
+  gap: 6px;
+  font-size: .9rem;
+  display: flex;
+}
+
+.page-module__aydn6q__input {
+  color: #f8fafc;
+  background: #0f172ab3;
+  border: 1px solid #94a3b84d;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.page-module__aydn6q__primaryButton {
+  color: #0f172a;
+  cursor: pointer;
+  background: #38bdf8;
+  border: none;
+  border-radius: 999px;
+  margin-top: 6px;
+  padding: 12px 18px;
+  font-weight: 600;
+}
+
+.page-module__aydn6q__secondaryButton {
+  color: #e2e8f0;
+  cursor: pointer;
+  background: none;
+  border: 1px solid #94a3b866;
+  border-radius: 999px;
+  padding: 10px 16px;
+}
+
+.page-module__aydn6q__error {
+  color: #fca5a5;
+  font-size: .9rem;
+}
+
+.page-module__aydn6q__mfaHint {
+  color: #e2e8f0cc;
+  font-size: .95rem;
+}
+
+.page-module__aydn6q__success {
+  flex-direction: column;
+  gap: 12px;
+  display: flex;
+}
+
+.page-module__aydn6q__token {
+  word-break: break-all;
+  background: #0f172ab3;
+  border: 1px solid #94a3b840;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+@media (max-width: 600px) {
+  .page-module__aydn6q__card {
+    padding: 24px;
+  }
+
+  .page-module__aydn6q__metaRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/*# sourceMappingURL=src_app_login_page_module_2a2c7658.css.map*/
