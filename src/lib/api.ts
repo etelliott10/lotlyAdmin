@@ -1,5 +1,7 @@
 export const apiBaseUrl =
-  process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:8000";
+  process.env.NEXT_PUBLIC_BACKEND_URL ??
+  process.env.NEXT_PUBLIC_API_BASE ??
+  "http://localhost:8000";
 
 function handleAuthFailure(status: number) {
   if (typeof window === "undefined") return;
