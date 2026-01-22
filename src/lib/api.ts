@@ -11,16 +11,9 @@ function handleAuthFailure(status: number) {
   }
 }
 
-export async function apiGet<TResponse>(path: string): Promise<TResponse> {
-  const response = await fetch(`${apiBaseUrl}${path}`, {
-    method: "GET",
-    credentials: "include",
-  });
-
-  if (!response.ok) {
-    handleAuthFailure(response.status);
-  }
-
+async function parseApiResponse<TResponse>(
+  response: Response,
+): Promise<TResponse> {
   const text = await response.text();
   const data = text ? (JSON.parse(text) as TResponse & { detail?: string }) : null;
 
@@ -32,6 +25,19 @@ export async function apiGet<TResponse>(path: string): Promise<TResponse> {
   }
 
   return data as TResponse;
+}
+
+export async function apiGet<TResponse>(path: string): Promise<TResponse> {
+  const response = await fetch(`${apiBaseUrl}${path}`, {
+    method: "GET",
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    handleAuthFailure(response.status);
+  }
+
+  return parseApiResponse(response);
 }
 
 export async function apiPost<TResponse>(
@@ -51,17 +57,7 @@ export async function apiPost<TResponse>(
     handleAuthFailure(response.status);
   }
 
-  const text = await response.text();
-  const data = text ? (JSON.parse(text) as TResponse & { detail?: string }) : null;
-
-  if (!response.ok) {
-    const message =
-      (data && "detail" in data && data.detail) ||
-      `Request failed (${response.status})`;
-    throw new Error(message);
-  }
-
-  return data as TResponse;
+  return parseApiResponse(response);
 }
 
 export async function apiPatch<TResponse>(
@@ -81,15 +77,5 @@ export async function apiPatch<TResponse>(
     handleAuthFailure(response.status);
   }
 
-  const text = await response.text();
-  const data = text ? (JSON.parse(text) as TResponse & { detail?: string }) : null;
-
-  if (!response.ok) {
-    const message =
-      (data && "detail" in data && data.detail) ||
-      `Request failed (${response.status})`;
-    throw new Error(message);
-  }
-
-  return data as TResponse;
+  return parseApiResponse(response);
 }
