@@ -9,6 +9,11 @@ const body = Sora({ subsets: ["latin"], variable: "--font-body" });
 export const metadata: Metadata = {
   title: "Lotly Admin",
   description: "Admin controls for the Lotly platform.",
+  icons: {
+    icon: "/lotly-house-icon.png",
+    apple: "/lotly-house-icon.png",
+    shortcut: "/lotly-house-icon.png",
+  },
 };
 
 export default function RootLayout({
