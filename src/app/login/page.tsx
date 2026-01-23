@@ -36,6 +36,14 @@ export default function AdminLoginPage() {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const persistSession = (token: string) => {
+    sessionStorage.setItem("lotly_admin_access_token", token);
+    const isSecure = window.location.protocol === "https:";
+    document.cookie = `lotly_admin_access_token=${token}; path=/; samesite=lax${
+      isSecure ? "; secure" : ""
+    }`;
+  };
+
   const maskedEmail = useMemo(() => {
     if (!email.includes("@")) return email;
     const [user, domain] = email.split("@");
@@ -63,7 +71,7 @@ export default function AdminLoginPage() {
 
       if (response.access_token) {
         setAccessToken(response.access_token);
-        sessionStorage.setItem("lotly_admin_access_token", response.access_token);
+        persistSession(response.access_token);
         setStep("success");
         router.push("/");
       }
@@ -91,7 +99,7 @@ export default function AdminLoginPage() {
         },
       );
       setAccessToken(response.access_token);
-      sessionStorage.setItem("lotly_admin_access_token", response.access_token);
+      persistSession(response.access_token);
       setStep("success");
       router.push("/");
     } catch (err) {
