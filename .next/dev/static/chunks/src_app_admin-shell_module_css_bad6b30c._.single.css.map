@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/admin-shell.module.css"],"sourcesContent":[".shell {\n  height: 100vh;\n  display: grid;\n  grid-template-columns: 280px 1fr;\n  align-items: start;\n  overflow: hidden;\n}\n\n.main {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  min-height: 0;\n  overflow: hidden;\n}\n\n.content {\n  flex: 1;\n  padding: 32px clamp(24px, 4vw, 56px) 64px;\n  overflow-y: auto;\n  min-height: 0;\n}\n\n@media (max-width: 1080px) {\n  .shell {\n    grid-template-columns: 1fr;\n  }\n  .content {\n    padding: 24px clamp(20px, 5vw, 40px) 48px;\n  }\n}\n\n@media (max-width: 720px) {\n  .content {\n    padding: 20px 18px 40px;\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;;;;;;;;AAQA;;;;;;;AAOA;EACE;;;;EAGA;;;;;AAKF;EACE"}}]
-}
