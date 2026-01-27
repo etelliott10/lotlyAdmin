@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   title: "Lotly Admin",
   description: "Admin controls for the Lotly platform.",
   icons: {
-    icon: "/lotly-house-icon.png",
-    apple: "/lotly-house-icon.png",
-    shortcut: "/lotly-house-icon.png",
+    icon: ["/favicon.ico?v=4"],
+    apple: ["/apple-touch-icon.png?v=4"],
+    shortcut: ["/apple-touch-icon.png"],
   },
 };
 
